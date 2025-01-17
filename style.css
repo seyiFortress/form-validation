@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200..1000&display=swap');
+/* <uniquifier>: Used a unique and descriptive class name
+<weight>: Used a value from 200 to 1000 */
+:root{
+    --input-clr: #edf7f4;
+    --base-clr: #8eb486;
+    --text-clr: #685752;
+    --accent-clr: #997c70;
+    --error-clr: #f06272;
+    --ff-sans: "Nunito", "Poppins", serif;
+    --fs-100: 1.125rem;
+    --fs-200: 1.25rem;
+    --fs-700: 3.3rem;
+    --fw-light: 300;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::before
+*::after{
+    box-sizing: border-box;
+}
+html{
+    font-weight: var(--fw-medium);
+    font-family: var(--ff-sans);
+    font-optical-sizing: auto;
+    text-align: center;
+    line-height: normal;
+    color: var(--text-clr);
+}
+/* LAYOUT */
+body{
+    background: url(/img/background-Img.jpg) right/cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.wrapper{
+    height: 100vh;
+    width: max(37.5rem, 40%);
+    background-color: var(--base-clr);
+    padding: 0.625rem;
+    border-radius: 0 1.25rem 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: min(100%, 25rem);
+    margin-top: 1.25rem;
+    margin-bottom: 3.125rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+    align-items: center;
+}
+form > label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+label > svg{
+    width: 3.125rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    background-color: var(--accent-clr);
+    fill: var(--input-clr);
+    border-radius: 0.625rem 0 0 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    min-width: 0;
+    height: 3.125rem;
+    flex-grow: 1;
+    background-color: var(--input-clr);
+    border-radius: 0 0.625rem 0.625rem 0;
+    border: 0.125rem solid var(--input-clr);
+    border-left: none;
+    font: inherit;
+    padding: 1em;
+    transition: 150ms ease;
+}
+form input:hover{
+    border-color: var(--accent-clr);
+}
+form input:focus{
+    outline: none;
+    border-color: var(--text-clr);
+}
+form:has(input:focus) > svg{
+    background-color: var(--text-clr);
+}
+form input::placeholder{
+    color: var(--text-clr);
+}
+form button{
+    margin-top: 0.625rem;
+    border: none;
+    padding: .75em 4em;
+    border-radius: 62.5rem;
+    background-color: var(--accent-clr);
+    color: var(--input-clr);
+    font: inherit;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+form button:hover{
+    background-color: var(--text-clr);
+}
+form button:focus{
+    outline: none;
+    background-color: var(--text-clr);
+    font-weight: var(--fw-black);
+}
+a{
+    text-decoration: none;
+    color: var(--accent-clr);
+    font-weight: var(--fw-light);
+}
+a:hover{
+    text-decoration: underline;
+    font-weight: var(--fw-bold);
+}
+/* TYPO */
+h1{
+    font-weight: var(--fw-black);
+    font-size: var(--fs-700);
+    line-height: 1.35;
+    margin: 0.8em 0;
+}
+h6{
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-200);
+    line-height: 1.6;
+    margin: 1.6em 0;
+}
+p{
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-100);
+    line-height: 1.618;
+    font-size: 1.125rem;
+}
+@media (max-width:600px) {
+    .wrapper{
+        width: 100%;
+        border-radius: 0;
+    }
+}
+.incorrect svg{
+    background-color: var(--error-clr);
+}
+div .incorrect input{
+    border-color: var(--error-clr);
+}
+.incorrect input::placeholder,
+.incorrect{
+    color: var(--error-clr);
+}
